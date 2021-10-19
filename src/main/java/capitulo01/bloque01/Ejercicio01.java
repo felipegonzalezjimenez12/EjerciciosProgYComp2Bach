@@ -2,10 +2,10 @@ package capitulo01.bloque01;
 
 public class Ejercicio01 {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) { 
           Scanner sc = new Scanner(System.in)
         		  
-        	Syso
+      
         	
         	
         	System.out.println("introduzca um numero entero:")
@@ -20,9 +20,7 @@ public class Ejercicio01 {
       	int numentero = sc.nextFloat();
         
         
-         
-          
-          
+        
          
           
 	}
