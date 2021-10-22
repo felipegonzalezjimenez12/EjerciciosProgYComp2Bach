@@ -17,7 +17,7 @@ public class Ejemplo01introducciondatos {
 	
 	System.out.println("el numero flotante es : " +numm);
 	
-	System.out.println("introduzca un string");
+	System.out.println("introduzca un string :");
 	String str = sc.next();
 	System.out.println("el string introducido es :" + str);
 		

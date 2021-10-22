@@ -8,14 +8,18 @@ public class Ejercicio02calculocuotamensual {
 		Scanner sc = new Scanner(System.in);
 		
 		float interesanual,interesmensual;
-		int meses;
+		int Meses;
 		float capital;
-		float euribor,diferencial,auxiliar,cuotamensual;
-		
+		float euribor, diferencial, auxiliar, cuotaMensual;
+		 
 		
 		System.out.println("introduzca el capoital :");
 		capital = sc.nextFloat();
 		System.out.println("el capital es : + capital");
+		
+		System.out.println("introduzca meses :");
+		Meses = sc.nextInt();
+		System.out.println("el capital es :" + Meses);
 		
 		System.out.println("introduzca diferencial :");
 		diferencial = sc.nextFloat();
@@ -26,18 +30,16 @@ public class Ejercicio02calculocuotamensual {
 	    euribor = sc.nextFloat();
 	    System.out.println("el euribor es :" + euribor);
 	    
-	    System.out.println("introduzca meses :");
-		capital = sc.nextInt();
-		System.out.println("el capital es :" + meses);
+	    
 		
 		//calculos
 		
 		interesanual = euribor + diferencial;
 		interesmensual = interesanual / 12 / 100;
-		auxiliar =  (float)Math.pow(1+interesmensual, meses);
-		cuotamensual = capital * (interesmensual * auxiliar) /(auxiliar - 1);
+		auxiliar =  (float)Math.pow(1+interesmensual, Meses );
+		cuotaMensual = capital * (interesmensual * auxiliar) /(auxiliar - 1);
 		
-		System.out.println("debes pagar" + coutamensual +);
+		System.out.println("debes pagar" + cuotaMensual+ "euro cada mes");
 
 	}
 
