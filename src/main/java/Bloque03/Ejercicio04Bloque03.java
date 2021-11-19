@@ -8,6 +8,7 @@ public class Ejercicio04Bloque03 {
 		Scanner sc = new Scanner(System.in);
 		int repeticiones = 0,num;
 		int suma = 0;
+		float media;
 	  System.out.println("cuantos numeros quiere pedir:");
 	  repeticiones = sc.nextInt();
 	  
@@ -21,8 +22,8 @@ public class Ejercicio04Bloque03 {
 		    } 
 	
 	  }
-	  
-	  System.out.println("la media es " + suma/repeticiones);
+	  media = suma / (float)repeticiones;
+	  System.out.println("la media es " + media);
 
 	}
 
