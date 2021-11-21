@@ -9,46 +9,28 @@ public class Ejercicio2Bloque02 {
     	int repeticiones;
     	int num ;
     	int menor = 0,mayor = 0;
-    			
-	
 	   System.out.println("cuantos numeros quiere pedir:");
 	   repeticiones = sc.nextInt();
-	  
-	   
 	   for ( int i = 0 ; i<repeticiones ; i++) {
 		  System.out.println("numero:");
 		  num = sc.nextInt();
-		  
 		  if(i == 0) {
 			  mayor = num;
-			  menor = num;
-			  	  
-			  
+			  menor = num;	  
 		  }
 		  else {
 		  if (num > mayor) {
 			  
-			  mayor = num;
-			  
+			  mayor = num;	  
+		  } 
+             if (num <menor) {  
+			  menor = num;		  
 		  }
-		  
-             if (num <menor) {
-			  
-			  menor = num;
-			  
-		  }
-		  
-		  }
-		  
+		  }  
 	    }
   
 	 System.out.println("mayor:" + mayor   +    "menor:" + menor);
-		   
-		  
 	  }
-
-      
-    
 	}
 
 
