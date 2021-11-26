@@ -7,8 +7,8 @@ public class Ejercicip01Bloque03for {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner (System.in);
 		
-		int num = 1,suma=0;
-		float media =0;
+		int repeticiones,num = 1,suma=0;
+		float media;
 		
 		
 		for(int i =0; num != 0 ;i++) {
