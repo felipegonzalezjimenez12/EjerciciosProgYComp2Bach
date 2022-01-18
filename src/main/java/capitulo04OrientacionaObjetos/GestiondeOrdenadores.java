@@ -4,9 +4,11 @@ public class GestiondeOrdenadores {
 
 	public static void main(String[] args) {
 		Ordenador java = new Ordenador();
-		java.altura = 40;
-		java.anchura= 50;
-
+		java.setAltura(50);
+		java.setAnchura(80);
+		java.setColor("negro");
+		java.setMarca("fujitsu");
+        System.out.println(java.toString());
 	}
 
 }
