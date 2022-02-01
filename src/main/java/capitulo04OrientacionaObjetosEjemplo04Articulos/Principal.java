@@ -35,7 +35,8 @@ public class Principal {
 				acomestible.setPrecio(sc.nextFloat());
 				System.out.println("caducidad");
 				acomestible.setCaducidad(sc.toString());
-			
+				System.out.println("Artículo de limpieza creado " + acomestible.toString());
+
 			case 2:
 				Alimpieza alimpieza = new Alimpieza();
 				
@@ -45,7 +46,8 @@ public class Principal {
 				alimpieza.setPrecio(sc.nextFloat());
 				System.out.println("ignifugo");
 				alimpieza.setIgnifugo(sc.nextBoolean());
-			
+				System.out.println("Artículo de limpieza creado " + alimpieza.toString());
+
 			}
 			
 		}
