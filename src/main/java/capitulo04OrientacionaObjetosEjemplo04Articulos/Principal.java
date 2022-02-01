@@ -5,9 +5,7 @@ import java.util.Scanner;
 
 public class Principal {
 
-	public static int main(String[] args) {
-		
-		
+	public static void main(String[] args) {
 		
 		int menu;
 		int opcionElegida;
@@ -52,6 +50,18 @@ public class Principal {
 			
 		}
 		while(opcionElegida != 0) ;
-		return opcionElegida;
+		return;
 		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
 	}
+
+
