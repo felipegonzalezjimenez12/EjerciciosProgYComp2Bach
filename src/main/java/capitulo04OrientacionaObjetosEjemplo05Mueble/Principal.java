@@ -18,10 +18,10 @@ public class Principal {
 				Silla silla = new Silla();
 				
 				System.out.println("Introduzca el color del mueble: ");
-			    silla.setColor(sc.toString());
+			    silla.setColor(sc.next());
 				
 				System.out.println("Introduzca el tipo de madre del mueble: ");
-				silla.setTipoMadera(sc.toString());
+				silla.setTipoMadera(sc.next());
 				
 				System.out.println("Introduzca el numero de patas de la silla : ");
 				silla.setNumPatas(sc.nextInt());
@@ -32,10 +32,10 @@ public class Principal {
 				Armario arma = new Armario();
 				
 				System.out.println("Introduzca el color del mueble: ");
-			    arma.setColor(sc.toString());
+			    arma.setColor(sc.next());
 				
 				System.out.println("Introduzca el tipo de madre del mueble: ");
-				arma.setTipoMadera(sc.toString());
+				arma.setTipoMadera(sc.next());
 				
 				System.out.println("Introduzca el numero de puertas del armario : ");
 				arma.setNumPuertas(sc.nextInt());
@@ -58,7 +58,7 @@ public class Principal {
 		int opcion;
 		Scanner sc = new Scanner(System.in);
 		
-		String textoMenu = "\n\n\tMENÚ" +
+		String textoMenu = "men�" +
 				"\n0.- Salir" + 
 				"\n1.- Crear artículo comestible" + 
 				"\n2.- Crear artículo de limpieza";
