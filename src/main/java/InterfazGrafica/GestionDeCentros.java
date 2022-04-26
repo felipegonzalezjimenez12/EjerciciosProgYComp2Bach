@@ -44,7 +44,7 @@ public class GestionDeCentros {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					GESTIODECENTROS window = new GESTIODECENTROS();
+					GestionDeCentros window = new GestionDeCentros();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -94,9 +94,9 @@ public class GestionDeCentros {
 		
 		textField_1 = new JTextField();
 		GridBagConstraints gbc_textField_1 = new GridBagConstraints();
-		gbc_textField_1.gridwidth = 2;
-		gbc_textField_1.insets = new Insets(0, 0, 5, 0);
 		gbc_textField_1.fill = GridBagConstraints.HORIZONTAL;
+		gbc_textField_1.gridwidth = 2;
+		gbc_textField_1.insets = new Insets(0, 0, 5, 5);
 		gbc_textField_1.gridx = 1;
 		gbc_textField_1.gridy = 1;
 		frame.getContentPane().add(textField_1, gbc_textField_1);
@@ -195,7 +195,7 @@ public class GestionDeCentros {
 		btnNewButton_3.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
-		//		mostrarPrimerCentro();
+			mostrarPrimerCentro();
 			}
 		});
 		panel.add(btnNewButton_3);
@@ -203,7 +203,7 @@ public class GestionDeCentros {
 		JButton btnNewButton_1 = new JButton("<");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-		//		mostrarAnteriorCentro();
+			mostrarAnterior();
 			}
 		});
 		panel.add(btnNewButton_1);
@@ -211,7 +211,7 @@ public class GestionDeCentros {
 		JButton btnNewButton_2 = new JButton(">");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-		//		mostrarSiguienteCentro();
+		mostrarSiguiente();
 			}
 		});
 		panel.add(btnNewButton_2);
@@ -219,15 +219,39 @@ public class GestionDeCentros {
 		JButton btnNewButton_4 = new JButton(">>");
 		btnNewButton_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			//	mostrarUltimoCentro();
+				mostrarUltimocentro();
 			}
 		});
 		panel.add(btnNewButton_4);
+		
+		JButton btnNewButton = new JButton("nuevo");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				nuevo();
+			}
+		});
+		panel.add(btnNewButton);
+		
+		JButton btnNewButton_5 = new JButton("eliminar");
+		btnNewButton_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				eliminar();
+			}
+		});
+		panel.add(btnNewButton_5);
+		
+		JButton btnNewButton_6 = new JButton("guardar");
+		btnNewButton_6.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				guardar();
+			}
+		});
+		panel.add(btnNewButton_6);
 	}
 	
 	
 	
-	private void mostrarPrimerAlumno() {
+	private void mostrarPrimerCentro() {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection conexion = (Connection) DriverManager.getConnection ("jdbc:mysql://localhost/centro?serverTimezone=UTC","root", "Abcdefgh.1");
@@ -261,7 +285,7 @@ public class GestionDeCentros {
 	}
 	
 	
-	private void mostrarUltimoAlumno() {
+	private void mostrarUltimocentro() {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection conexion = (Connection) DriverManager.getConnection ("jdbc:mysql://localhost/centro?serverTimezone=UTC","root", "Abcdefgh.1");
@@ -297,11 +321,11 @@ public class GestionDeCentros {
 	private void mostrarSiguiente() {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection conexion = (Connection) DriverManager.getConnection ("jdbc:mysql://localhost/alumnos?serverTimezone=UTC","root", "Abcdefgh.1");
+			Connection conexion = (Connection) DriverManager.getConnection ("jdbc:mysql://localhost/centro?serverTimezone=UTC","root", "Abcdefgh.1");
 
 			Statement s = (Statement) conexion.createStatement(); 
 			
-			ResultSet rs = s.executeQuery ("select * from alumnos.alumno where id > " + 
+			ResultSet rs = s.executeQuery ("select * centroeducativo.centro where id > " + 
 				jtfid.getText() + " order by id limit 1");
 		   
 			if (rs.next() == true) { 
@@ -334,7 +358,7 @@ public class GestionDeCentros {
 
 			Statement s = (Statement) conexion.createStatement(); 
 			
-			String comando = "select * from alumnos.alumno where id < " + 
+			String comando = "select * from centroeducativo.centro where id < " + 
 					jtfid.getText() + " order by id desc limit 1";
 			System.out.println(comando);
 			ResultSet rs = s.executeQuery (comando);
@@ -364,11 +388,11 @@ public class GestionDeCentros {
 	private int siguienteIdDisponible() {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection conexion = (Connection) DriverManager.getConnection ("jdbc:mysql://localhost/alumnos?serverTimezone=UTC","root", "Abcdefgh.1");
+			Connection conexion = (Connection) DriverManager.getConnection ("jdbc:mysql://localhost/centro?serverTimezone=UTC","root", "Abcdefgh.1");
 
 			Statement s = (Statement) conexion.createStatement(); 
 			
-			ResultSet rs = s.executeQuery ("select max(id) from alumnos.alumno");
+			ResultSet rs = s.executeQuery ("select max(id) from centroeducativo.centro");
 		   
 			// Navegación del objeto ResultSet
 			if (rs.next() == true) { 
@@ -392,7 +416,7 @@ public class GestionDeCentros {
 	
 	
 	private void guardar() {
-		if (jtfId.getText().equals("0")) {
+		if (jtfid.getText().equals("0")) {
 			insertar();
 		}
 		else {
@@ -404,7 +428,7 @@ public class GestionDeCentros {
 	private void insertar() {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection conexion = (Connection) DriverManager.getConnection ("jdbc:mysql://localhost/alumnos?serverTimezone=UTC","root", "Abcdefgh.1");
+			Connection conexion = (Connection) DriverManager.getConnection ("jdbc:mysql://localhost/cenreo?serverTimezone=UTC","root", "Abcdefgh.1");
 
 			Statement s = (Statement) conexion.createStatement(); 
 			
@@ -441,7 +465,7 @@ public class GestionDeCentros {
 	private void modificar () {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection conexion = (Connection) DriverManager.getConnection ("jdbc:mysql://localhost/alumnos?serverTimezone=UTC","root", "Abcdefgh.1");
+			Connection conexion = (Connection) DriverManager.getConnection ("jdbc:mysql://localhost/centro?serverTimezone=UTC","root", "Abcdefgh.1");
 
 			Statement s = (Statement) conexion.createStatement(); 
 			
@@ -478,12 +502,12 @@ public class GestionDeCentros {
 
 			Statement s = (Statement) conexion.createStatement(); 
 			
-			int registrosModificados = s.executeUpdate ("delete from alumnos.alumno " +
+			int registrosModificados = s.executeUpdate ("delete from centroeducativo.centro " +
 					"where id = " + jtfid.getText());
 		   
 			if (registrosModificados == 1) {
 				JOptionPane.showMessageDialog(null, "Eliminado correctamente");
-				mostrarPrimerAlumno();
+				mostrarPrimerCentro();
 			}
 			else {
 				JOptionPane.showMessageDialog(null, "Error al eliminar");
@@ -500,6 +524,13 @@ public class GestionDeCentros {
 			System.out.println("Error en la ejecución SQL: " + ex.getMessage());
 			ex.printStackTrace();
 		}
+	}
+	private void nuevo() {
+		this.jtfid.setText("0");
+		this.jtfdenominacion.setText("");
+		this.jtfdireccion.setText("");
+		this.jtfpoblacion.setText("");
+		this.jtfprovincia.setText("");
 	}
 	
 }
