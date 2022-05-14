@@ -254,7 +254,7 @@ public class GestionDeCentros {
 	private void mostrarPrimerCentro() {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection conexion = (Connection) DriverManager.getConnection ("jdbc:mysql://localhost/centro?serverTimezone=UTC","root", "Abcdefgh.1");
+			Connection conexion = (Connection) DriverManager.getConnection ("jdbc:mysql://localhost/centroeducativo?serverTimezone=UTC","root", "Abcdefgh.1");
 
 			Statement s = (Statement) conexion.createStatement(); 
 			
@@ -288,7 +288,7 @@ public class GestionDeCentros {
 	private void mostrarUltimocentro() {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection conexion = (Connection) DriverManager.getConnection ("jdbc:mysql://localhost/centro?serverTimezone=UTC","root", "Abcdefgh.1");
+			Connection conexion = (Connection) DriverManager.getConnection ("jdbc:mysql://localhost/centroeducativo?serverTimezone=UTC","root", "Abcdefgh.1");
 
 			Statement s = (Statement) conexion.createStatement(); 
 			
@@ -321,7 +321,7 @@ public class GestionDeCentros {
 	private void mostrarSiguiente() {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection conexion = (Connection) DriverManager.getConnection ("jdbc:mysql://localhost/centro?serverTimezone=UTC","root", "Abcdefgh.1");
+			Connection conexion = (Connection) DriverManager.getConnection ("jdbc:mysql://localhost/centroeducativo?serverTimezone=UTC","root", "Abcdefgh.1");
 
 			Statement s = (Statement) conexion.createStatement(); 
 			
@@ -354,7 +354,7 @@ public class GestionDeCentros {
 	private void mostrarAnterior() {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection conexion = (Connection) DriverManager.getConnection ("jdbc:mysql://localhost/centro?serverTimezone=UTC","root", "Abcdefgh.1");
+			Connection conexion = (Connection) DriverManager.getConnection ("jdbc:mysql://localhost/centroeducativo?serverTimezone=UTC","root", "Abcdefgh.1");
 
 			Statement s = (Statement) conexion.createStatement(); 
 			
@@ -388,7 +388,7 @@ public class GestionDeCentros {
 	private int siguienteIdDisponible() {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection conexion = (Connection) DriverManager.getConnection ("jdbc:mysql://localhost/centro?serverTimezone=UTC","root", "Abcdefgh.1");
+			Connection conexion = (Connection) DriverManager.getConnection ("jdbc:mysql://localhost/centroeducativo?serverTimezone=UTC","root", "Abcdefgh.1");
 
 			Statement s = (Statement) conexion.createStatement(); 
 			
@@ -428,12 +428,12 @@ public class GestionDeCentros {
 	private void insertar() {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection conexion = (Connection) DriverManager.getConnection ("jdbc:mysql://localhost/cenreo?serverTimezone=UTC","root", "Abcdefgh.1");
+			Connection conexion = (Connection) DriverManager.getConnection ("jdbc:mysql://localhost/centroeducativo?serverTimezone=UTC","root", "Abcdefgh.1");
 
 			Statement s = (Statement) conexion.createStatement(); 
 			
 			int id = siguienteIdDisponible();
-			String comando = "insert into alumnos.alumno values (" + id + ", '" +
+			String comando = "insert into centroeducativo.centro values (" + id + ", '" +
 					jtftipo.getText() + "', '" + 
 					jtfdenominacion.getText() + "', '" + jtfdireccion.getText() + "', " + jtfpoblacion.getText() + "," + jtfprovincia.getText() + "', \" )";
 			
@@ -465,7 +465,7 @@ public class GestionDeCentros {
 	private void modificar () {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection conexion = (Connection) DriverManager.getConnection ("jdbc:mysql://localhost/centro?serverTimezone=UTC","root", "Abcdefgh.1");
+			Connection conexion = (Connection) DriverManager.getConnection ("jdbc:mysql://localhost/centroeducativo?serverTimezone=UTC","root", "Abcdefgh.1");
 
 			Statement s = (Statement) conexion.createStatement(); 
 			
@@ -498,7 +498,7 @@ public class GestionDeCentros {
 	private void eliminar() {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection conexion = (Connection) DriverManager.getConnection ("jdbc:mysql://localhost/centro?serverTimezone=UTC","root", "Abcdefgh.1");
+			Connection conexion = (Connection) DriverManager.getConnection ("jdbc:mysql://localhost/centroeducativo?serverTimezone=UTC","root", "Abcdefgh.1");
 
 			Statement s = (Statement) conexion.createStatement(); 
 			
